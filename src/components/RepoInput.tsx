@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Github, Search, Loader2, AlertCircle } from "lucide-react";
-import type { RepoData, GitHubRepo, GitHubContent } from "../types";
+import type { RepoData, GitHubRepo, GitHubContent } from "../types/index";
 
 interface RepoInputProps {
   onRepoAnalyzed: (data: RepoData) => void;

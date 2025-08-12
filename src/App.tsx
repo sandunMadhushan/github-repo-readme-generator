@@ -9,7 +9,7 @@ import {
   FeatureCard,
   Footer,
 } from "./components";
-import type { RepoData, Template } from "./types";
+import type { RepoData, Template } from "./types/index";
 
 function App() {
   const [repoData, setRepoData] = useState<RepoData | null>(null);

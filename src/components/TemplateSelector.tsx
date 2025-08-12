@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import type { Template, RepoData, TemplateConfig } from "../types";
+import type { Template, RepoData, TemplateConfig } from "../types/index";
 
 interface TemplateSelectorProps {
   selected: Template;
