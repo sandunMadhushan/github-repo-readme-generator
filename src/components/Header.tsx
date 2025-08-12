@@ -1,4 +1,4 @@
-import { Github, Star } from 'lucide-react'
+import { Github, Star } from "lucide-react";
 
 export function Header() {
   return (
@@ -18,13 +18,22 @@ export function Header() {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a
+              href="#features"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
               Features
             </a>
-            <a href="#templates" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a
+              href="#templates"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
               Templates
             </a>
-            <a href="#examples" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a
+              href="#examples"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
               Examples
             </a>
           </nav>
@@ -35,9 +44,9 @@ export function Header() {
               <Star className="w-4 h-4" />
               <span className="hidden sm:inline">Star on GitHub</span>
             </button>
-            <a 
-              href="https://github.com" 
-              target="_blank" 
+            <a
+              href="https://github.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
             >
@@ -48,5 +57,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

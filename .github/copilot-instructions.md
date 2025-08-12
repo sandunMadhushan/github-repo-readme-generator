@@ -5,6 +5,7 @@
 This is a modern React TypeScript application for generating advanced README files for GitHub repositories.
 
 ## Project Structure
+
 - Built with Vite + React + TypeScript
 - Uses Tailwind CSS for styling
 - Implements GitHub API integration for repository analysis
@@ -12,6 +13,7 @@ This is a modern React TypeScript application for generating advanced README fil
 - Includes markdown rendering with syntax highlighting
 
 ## Key Technologies
+
 - **React 18** with TypeScript
 - **Tailwind CSS** for styling with custom design system
 - **Lucide React** for icons
@@ -20,6 +22,7 @@ This is a modern React TypeScript application for generating advanced README fil
 - **Headless UI** for accessible components
 
 ## Code Guidelines
+
 - Use TypeScript strict mode
 - Follow functional component patterns with hooks
 - Use proper type imports with `import type`
@@ -29,6 +32,7 @@ This is a modern React TypeScript application for generating advanced README fil
 - Keep components modular and reusable
 
 ## Component Patterns
+
 - Props interfaces should be clearly typed
 - Use `useCallback` for event handlers when needed
 - Implement proper loading states
@@ -36,6 +40,7 @@ This is a modern React TypeScript application for generating advanced README fil
 - Use proper ARIA labels for accessibility
 
 ## Styling Approach
+
 - Custom Tailwind configuration with design tokens
 - Component-based CSS patterns
 - Responsive-first design
@@ -43,6 +48,7 @@ This is a modern React TypeScript application for generating advanced README fil
 - Custom button variants and utilities
 
 ## Features to Implement
+
 - GitHub repository analysis and data extraction
 - Multiple README templates (minimal, standard, comprehensive, etc.)
 - Live markdown preview with syntax highlighting

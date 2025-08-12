@@ -1,7 +1,7 @@
 interface FeatureCardProps {
-  icon: string
-  title: string
-  description: string
+  icon: string;
+  title: string;
+  description: string;
 }
 
 export function FeatureCard({ icon, title, description }: FeatureCardProps) {
@@ -11,5 +11,5 @@ export function FeatureCard({ icon, title, description }: FeatureCardProps) {
       <h3 className="text-xl font-semibold text-gray-900 mb-3">{title}</h3>
       <p className="text-gray-600 leading-relaxed">{description}</p>
     </div>
-  )
+  );
 }

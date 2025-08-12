@@ -7,11 +7,13 @@ An advanced README generator that creates comprehensive, professional documentat
 ## ✨ Features
 
 ### 🔍 **Smart Repository Analysis**
+
 - Automatically analyzes repository structure and dependencies
 - Detects programming languages, frameworks, and tools
 - Identifies project patterns and generates relevant content
 
 ### 📋 **Multiple Professional Templates**
+
 - **Minimal** - Clean and simple for small projects
 - **Standard** - Well-structured for personal projects
 - **Comprehensive** - Detailed documentation for serious projects
@@ -20,18 +22,21 @@ An advanced README generator that creates comprehensive, professional documentat
 - **Enterprise** - Professional with compliance sections
 
 ### 👁️ **Live Preview & Editing**
+
 - Real-time markdown preview with syntax highlighting
 - WYSIWYG editing experience
 - Responsive preview for different screen sizes
 - GitHub-flavored markdown support
 
 ### 📥 **Advanced Export Options**
+
 - Download as Markdown (.md)
 - Export as HTML with styling
 - Copy to clipboard functionality
 - Multiple format support
 
 ### 🎨 **Modern UI/UX**
+
 - Beautiful, responsive design built with Tailwind CSS
 - Dark/light theme support
 - Smooth animations and transitions
@@ -57,17 +62,20 @@ An advanced README generator that creates comprehensive, professional documentat
 ### Installation
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/sandunMadhushan/github-repo-readme-generator
    cd github-repo-readme-generator
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server:**
+
    ```bash
    npm run dev
    ```
@@ -97,7 +105,9 @@ An advanced README generator that creates comprehensive, professional documentat
 ### Advanced Features
 
 #### Repository Analysis
+
 The tool automatically detects:
+
 - Programming languages and their usage percentages
 - Dependencies and development tools
 - Project structure and file organization
@@ -105,7 +115,9 @@ The tool automatically detects:
 - Testing setup and CI/CD configuration
 
 #### Template Customization
+
 Each template includes:
+
 - Smart content generation based on repository analysis
 - Customizable sections (features, installation, usage, etc.)
 - Automatic badge generation

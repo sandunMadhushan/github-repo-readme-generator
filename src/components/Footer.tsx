@@ -1,4 +1,4 @@
-import { Github, Twitter, Heart } from 'lucide-react'
+import { Github, Twitter, Heart } from "lucide-react";
 
 export function Footer() {
   return (
@@ -14,7 +14,8 @@ export function Footer() {
               <span className="font-bold text-gray-900">README Pro</span>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Create professional README files with advanced features and beautiful templates.
+              Create professional README files with advanced features and
+              beautiful templates.
             </p>
           </div>
 
@@ -22,10 +23,38 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">Product</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Templates</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Examples</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">API</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Templates
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Examples
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  API
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -33,10 +62,38 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">Resources</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Guides</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Blog</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Support</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Documentation
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Guides
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  Support
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -44,16 +101,16 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">Connect</h4>
             <div className="flex items-center space-x-4">
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
                 aria-label="GitHub"
                 title="GitHub"
               >
                 <Github className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
                 aria-label="Twitter"
                 title="Twitter"
@@ -76,5 +133,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

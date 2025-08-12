@@ -1,38 +1,46 @@
-import { useState, useEffect, useCallback } from 'react'
-import { Edit3, RefreshCw } from 'lucide-react'
-import type { Template, RepoData } from '../types'
+import { useState, useEffect, useCallback } from "react";
+import { Edit3, RefreshCw } from "lucide-react";
+import type { Template, RepoData } from "../types";
 
 interface EditorSectionProps {
-  content: string
-  onChange: (content: string) => void
-  template: Template
-  repoData: RepoData
+  content: string;
+  onChange: (content: string) => void;
+  template: Template;
+  repoData: RepoData;
 }
 
-export function EditorSection({ content, onChange, template, repoData }: EditorSectionProps) {
-  const [isGenerating, setIsGenerating] = useState(false)
+export function EditorSection({
+  content,
+  onChange,
+  template,
+  repoData,
+}: EditorSectionProps) {
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const generateContent = useCallback(() => {
-    setIsGenerating(true)
-    
+    setIsGenerating(true);
+
     // Simulate content generation based on template and repo data
     setTimeout(() => {
-      const generatedContent = createReadmeContent(template, repoData)
-      onChange(generatedContent)
-      setIsGenerating(false)
-    }, 1500)
-  }, [template, repoData, onChange])
+      const generatedContent = createReadmeContent(template, repoData);
+      onChange(generatedContent);
+      setIsGenerating(false);
+    }, 1500);
+  }, [template, repoData, onChange]);
 
   useEffect(() => {
     if (!content && repoData) {
-      generateContent()
+      generateContent();
     }
-  }, [content, repoData, generateContent])
+  }, [content, repoData, generateContent]);
 
-  const createReadmeContent = (template: Template, repoData: RepoData): string => {
-    const shields = generateShields(repoData)
-    const sections = generateSections(template, repoData)
-    
+  const createReadmeContent = (
+    template: Template,
+    repoData: RepoData
+  ): string => {
+    const shields = generateShields(repoData);
+    const sections = generateSections(template, repoData);
+
     return `# ${repoData.name}
 
 ${shields}
@@ -43,34 +51,42 @@ ${sections}
 
 ---
 
-⭐ Don't forget to star this project if you found it helpful!`
-  }
+⭐ Don't forget to star this project if you found it helpful!`;
+  };
 
   const generateShields = (repo: RepoData): string => {
-    const shields: string[] = []
-    
+    const shields: string[] = [];
+
     // Language shield
     if (repo.language) {
-      shields.push(`![${repo.language}](https://img.shields.io/badge/language-${repo.language}-blue)`)
+      shields.push(
+        `![${repo.language}](https://img.shields.io/badge/language-${repo.language}-blue)`
+      );
     }
-    
+
     // Stars and forks
-    shields.push(`![Stars](https://img.shields.io/github/stars/${repo.owner}/${repo.name})`)
-    shields.push(`![Forks](https://img.shields.io/github/forks/${repo.owner}/${repo.name})`)
-    
+    shields.push(
+      `![Stars](https://img.shields.io/github/stars/${repo.owner}/${repo.name})`
+    );
+    shields.push(
+      `![Forks](https://img.shields.io/github/forks/${repo.owner}/${repo.name})`
+    );
+
     // License
     if (repo.hasLicense && repo.license) {
-      shields.push(`![License](https://img.shields.io/github/license/${repo.owner}/${repo.name})`)
+      shields.push(
+        `![License](https://img.shields.io/github/license/${repo.owner}/${repo.name})`
+      );
     }
-    
-    return shields.join(' ')
-  }
+
+    return shields.join(" ");
+  };
 
   const generateSections = (template: Template, repo: RepoData): string => {
-    let sections = ''
+    let sections = "";
 
     // Table of Contents
-    if (template !== 'minimal') {
+    if (template !== "minimal") {
       sections += `
 ## 📋 Table of Contents
 
@@ -81,7 +97,7 @@ ${sections}
 - [Contributing](#contributing)
 - [License](#license)
 
-`
+`;
     }
 
     // Features
@@ -89,24 +105,24 @@ ${sections}
       sections += `
 ## ✨ Features
 
-${repo.features.map(feature => `- ${feature}`).join('\n')}
+${repo.features.map((feature) => `- ${feature}`).join("\n")}
 
-`
+`;
     }
 
     // Tech Stack
     if (Object.keys(repo.languages).length > 1) {
       const sortedLanguages = Object.entries(repo.languages)
-        .sort(([,a], [,b]) => b - a)
+        .sort(([, a], [, b]) => b - a)
         .slice(0, 5)
-        .map(([lang]) => lang)
-      
+        .map(([lang]) => lang);
+
       sections += `
 ## 🛠️ Tech Stack
 
-${sortedLanguages.map(lang => `- **${lang}**`).join('\n')}
+${sortedLanguages.map((lang) => `- **${lang}**`).join("\n")}
 
-`
+`;
     }
 
     // Installation
@@ -119,7 +135,7 @@ git clone ${repo.url}
 cd ${repo.name}
 \`\`\`
 
-`
+`;
 
     // Add specific installation based on detected dependencies
     if (repo.dependencies && Object.keys(repo.dependencies).length > 0) {
@@ -128,15 +144,17 @@ cd ${repo.name}
 npm install
 \`\`\`
 
-`
+`;
     }
 
     // Scripts section if package.json scripts are detected
     if (repo.scripts && Object.keys(repo.scripts).length > 0) {
       sections += `3. Available scripts:
-${Object.entries(repo.scripts).map(([name, script]) => `- \`npm run ${name}\` - ${script}`).join('\n')}
+${Object.entries(repo.scripts)
+  .map(([name, script]) => `- \`npm run ${name}\` - ${script}`)
+  .join("\n")}
 
-`
+`;
     }
 
     // Usage
@@ -151,10 +169,10 @@ const example = new ${repo.name.charAt(0).toUpperCase() + repo.name.slice(1)}();
 example.start();
 \`\`\`
 
-`
+`;
 
     // API Reference for libraries/packages
-    if (template === 'comprehensive' || template === 'open-source') {
+    if (template === "comprehensive" || template === "open-source") {
       sections += `
 ## 📚 API Reference
 
@@ -171,11 +189,11 @@ Description of the method.
 **Returns:**
 - \`returnType\`: Description
 
-`
+`;
     }
 
     // Contributing section for open source
-    if (template === 'open-source' || template === 'comprehensive') {
+    if (template === "open-source" || template === "comprehensive") {
       sections += `
 ## 🤝 Contributing
 
@@ -189,7 +207,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 4. Push to the branch (\`git push origin feature/amazing-feature\`)
 5. Open a Pull Request
 
-`
+`;
     }
 
     // License
@@ -197,13 +215,15 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
       sections += `
 ## 📄 License
 
-This project is licensed under the ${repo.license || 'MIT'} License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the ${
+        repo.license || "MIT"
+      } License - see the [LICENSE](LICENSE) file for details.
 
-`
+`;
     }
 
     // Additional sections for enterprise template
-    if (template === 'enterprise') {
+    if (template === "enterprise") {
       sections += `
 ## 🔒 Security
 
@@ -220,11 +240,11 @@ This project follows:
 
 For enterprise support, contact support@company.com
 
-`
+`;
     }
 
-    return sections
-  }
+    return sections;
+  };
 
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-200">
@@ -251,7 +271,7 @@ For enterprise support, contact support@company.com
           )}
         </button>
       </div>
-      
+
       <div className="p-4">
         <textarea
           value={content}
@@ -261,5 +281,5 @@ For enterprise support, contact support@company.com
         />
       </div>
     </div>
-  )
+  );
 }

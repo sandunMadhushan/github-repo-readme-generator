@@ -1,21 +1,21 @@
-import { Download, FileText, Globe, FileType } from 'lucide-react'
+import { Download, FileText, Globe, FileType } from "lucide-react";
 
 interface ExportOptionsProps {
-  content: string
+  content: string;
 }
 
 export function ExportOptions({ content }: ExportOptionsProps) {
   const downloadMarkdown = () => {
-    const blob = new Blob([content], { type: 'text/markdown' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'README.md'
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    URL.revokeObjectURL(url)
-  }
+    const blob = new Blob([content], { type: "text/markdown" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "README.md";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
 
   const downloadHTML = () => {
     const htmlContent = `<!DOCTYPE html>
@@ -33,29 +33,29 @@ export function ExportOptions({ content }: ExportOptionsProps) {
   </style>
 </head>
 <body>
-  <div id="content">${content.replace(/\n/g, '<br>')}</div>
+  <div id="content">${content.replace(/\n/g, "<br>")}</div>
 </body>
-</html>`
+</html>`;
 
-    const blob = new Blob([htmlContent], { type: 'text/html' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'README.html'
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    URL.revokeObjectURL(url)
-  }
+    const blob = new Blob([htmlContent], { type: "text/html" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "README.html";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(content)
+      await navigator.clipboard.writeText(content);
       // Could add a toast notification here
     } catch (err) {
-      console.error('Failed to copy to clipboard:', err)
+      console.error("Failed to copy to clipboard:", err);
     }
-  }
+  };
 
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
@@ -63,7 +63,7 @@ export function ExportOptions({ content }: ExportOptionsProps) {
         <Download className="w-5 h-5 text-gray-600" />
         <h3 className="text-lg font-semibold text-gray-900">Export Options</h3>
       </div>
-      
+
       <div className="space-y-3">
         <button
           onClick={downloadMarkdown}
@@ -111,5 +111,5 @@ export function ExportOptions({ content }: ExportOptionsProps) {
         </ul>
       </div>
     </div>
-  )
+  );
 }

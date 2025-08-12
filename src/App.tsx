@@ -1,24 +1,25 @@
-import { useState } from 'react'
-import { Header } from './components/Header'
-import { RepoInput } from './components/RepoInput'
-import { TemplateSelector } from './components/TemplateSelector'
-import { EditorSection } from './components/EditorSection'
-import { PreviewSection } from './components/PreviewSection'
-import { ExportOptions } from './components/ExportOptions'
-import { FeatureCard } from './components/FeatureCard'
-import { Footer } from './components/Footer'
-import type { RepoData, Template } from './types'
+import { useState } from "react";
+import { Header } from "./components/Header";
+import { RepoInput } from "./components/RepoInput";
+import { TemplateSelector } from "./components/TemplateSelector";
+import { EditorSection } from "./components/EditorSection";
+import { PreviewSection } from "./components/PreviewSection";
+import { ExportOptions } from "./components/ExportOptions";
+import { FeatureCard } from "./components/FeatureCard";
+import { Footer } from "./components/Footer";
+import type { RepoData, Template } from "./types";
 
 function App() {
-  const [repoData, setRepoData] = useState<RepoData | null>(null)
-  const [selectedTemplate, setSelectedTemplate] = useState<Template>('comprehensive')
-  const [readmeContent, setReadmeContent] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
+  const [repoData, setRepoData] = useState<RepoData | null>(null);
+  const [selectedTemplate, setSelectedTemplate] =
+    useState<Template>("comprehensive");
+  const [readmeContent, setReadmeContent] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       <Header />
-      
+
       <main className="container mx-auto px-4 py-8 space-y-12">
         {/* Hero Section */}
         <section className="text-center py-16">
@@ -26,14 +27,15 @@ function App() {
             Advanced README Generator
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Create comprehensive, professional README files for your GitHub repositories. 
-            Analyze your codebase, choose from multiple templates, and generate documentation that stands out.
+            Create comprehensive, professional README files for your GitHub
+            repositories. Analyze your codebase, choose from multiple templates,
+            and generate documentation that stands out.
           </p>
         </section>
 
         {/* Repository Input */}
         <section className="max-w-4xl mx-auto">
-          <RepoInput 
+          <RepoInput
             onRepoAnalyzed={setRepoData}
             isLoading={isLoading}
             setIsLoading={setIsLoading}
@@ -47,32 +49,32 @@ function App() {
               Advanced Features
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <FeatureCard 
+              <FeatureCard
                 icon="🔍"
                 title="Repository Analysis"
                 description="Automatically analyze your repository structure, languages, and dependencies"
               />
-              <FeatureCard 
+              <FeatureCard
                 icon="📝"
                 title="Multiple Templates"
                 description="Choose from various professional templates tailored for different project types"
               />
-              <FeatureCard 
+              <FeatureCard
                 icon="👁️"
                 title="Live Preview"
                 description="See real-time preview of your README as you edit and customize it"
               />
-              <FeatureCard 
+              <FeatureCard
                 icon="⚡"
                 title="Smart Generation"
                 description="AI-powered content generation based on your repository analysis"
               />
-              <FeatureCard 
+              <FeatureCard
                 icon="🎨"
                 title="Custom Styling"
                 description="Customize badges, shields, and visual elements to match your brand"
               />
-              <FeatureCard 
+              <FeatureCard
                 icon="📥"
                 title="Export Options"
                 description="Export as Markdown, PDF, or HTML with different styling options"
@@ -86,12 +88,12 @@ function App() {
           <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* Left Panel */}
             <div className="space-y-6">
-              <TemplateSelector 
+              <TemplateSelector
                 selected={selectedTemplate}
                 onSelect={setSelectedTemplate}
                 repoData={repoData}
               />
-              <EditorSection 
+              <EditorSection
                 content={readmeContent}
                 onChange={setReadmeContent}
                 template={selectedTemplate}
@@ -110,7 +112,7 @@ function App() {
 
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

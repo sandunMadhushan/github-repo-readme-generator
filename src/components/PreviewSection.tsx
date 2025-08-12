@@ -1,10 +1,10 @@
-import { Eye } from 'lucide-react'
-import ReactMarkdown from 'react-markdown'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { Eye } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface PreviewSectionProps {
-  content: string
+  content: string;
 }
 
 export function PreviewSection({ content }: PreviewSectionProps) {
@@ -14,16 +14,16 @@ export function PreviewSection({ content }: PreviewSectionProps) {
         <Eye className="w-5 h-5 text-gray-600" />
         <h3 className="text-lg font-semibold text-gray-900">Live Preview</h3>
       </div>
-      
+
       <div className="p-6 max-h-[600px] overflow-y-auto">
         {content ? (
           <div className="prose prose-sm max-w-none">
             <ReactMarkdown
               components={{
                 code: (props) => {
-                  const { children, className } = props
-                  const match = /language-(\w+)/.exec(className || '')
-                  
+                  const { children, className } = props;
+                  const match = /language-(\w+)/.exec(className || "");
+
                   if (match) {
                     return (
                       <SyntaxHighlighter
@@ -31,16 +31,12 @@ export function PreviewSection({ content }: PreviewSectionProps) {
                         language={match[1]}
                         PreTag="div"
                       >
-                        {String(children).replace(/\n$/, '')}
+                        {String(children).replace(/\n$/, "")}
                       </SyntaxHighlighter>
-                    )
+                    );
                   }
-                  
-                  return (
-                    <code className={className}>
-                      {children}
-                    </code>
-                  )
+
+                  return <code className={className}>{children}</code>;
                 },
                 h1: ({ children }) => (
                   <h1 className="text-3xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
@@ -73,12 +69,10 @@ export function PreviewSection({ content }: PreviewSectionProps) {
                   </ol>
                 ),
                 li: ({ children }) => (
-                  <li className="text-gray-600 ml-6">
-                    {children}
-                  </li>
+                  <li className="text-gray-600 ml-6">{children}</li>
                 ),
                 a: ({ href, children }) => (
-                  <a 
+                  <a
                     href={href}
                     className="text-primary-600 hover:text-primary-800 underline"
                     target="_blank"
@@ -88,7 +82,7 @@ export function PreviewSection({ content }: PreviewSectionProps) {
                   </a>
                 ),
                 img: ({ src, alt }) => (
-                  <img 
+                  <img
                     src={src}
                     alt={alt}
                     className="inline-block max-h-6 mx-1"
@@ -107,9 +101,7 @@ export function PreviewSection({ content }: PreviewSectionProps) {
                   </div>
                 ),
                 thead: ({ children }) => (
-                  <thead className="bg-gray-50">
-                    {children}
-                  </thead>
+                  <thead className="bg-gray-50">{children}</thead>
                 ),
                 th: ({ children }) => (
                   <th className="px-4 py-2 text-left font-semibold text-gray-900 border border-gray-300">
@@ -133,5 +125,5 @@ export function PreviewSection({ content }: PreviewSectionProps) {
         )}
       </div>
     </div>
-  )
+  );
 }
