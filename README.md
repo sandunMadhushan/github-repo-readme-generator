@@ -1,8 +1,10 @@
 # 📝 README Generator Pro
 
-![React](https://img.shields.io/badge/React-18-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Vite](https://img.shields.io/badge/Vite-5-purple) ![Tailwind](https://img.shields.io/badge/TailwindCSS-3-cyan)
+![React](https://img.shields.io/badge/React-18-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Vite](https://img.shields.io/badge/Vite-5-purple) ![Tailwind](https://img.shields.io/badge/TailwindCSS-3-cyan) ![Deploy](https://github.com/sandunMadhushan/github-repo-readme-generator/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
 
 An advanced README generator that creates comprehensive, professional documentation for your GitHub repositories. Built with modern web technologies and powered by intelligent repository analysis.
+
+🔗 **Live Demo**: [https://sandun.is-a.dev/github-repo-readme-generator/](https://sandun.is-a.dev/github-repo-readme-generator/)
 
 ## ✨ Features
 
@@ -122,6 +124,12 @@ Each template includes:
 - Customizable sections (features, installation, usage, etc.)
 - Automatic badge generation
 - Technology-specific documentation patterns
+
+## 🚀 Deployment
+
+The application is automatically deployed to GitHub Pages at [https://sandun.is-a.dev/github-repo-readme-generator/](https://sandun.is-a.dev/github-repo-readme-generator/) using GitHub Actions.
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ## 🤝 Contributing
 
