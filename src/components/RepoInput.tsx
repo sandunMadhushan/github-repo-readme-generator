@@ -104,7 +104,7 @@ export function RepoInput({ onRepoAnalyzed, isLoading, setIsLoading }: RepoInput
   }
 
   const generateFeatures = (
-    repo: GitHubRepo, 
+    repoData: GitHubRepo, 
     contents: GitHubContent[], 
     deps: Record<string, string>, 
     devDeps: Record<string, string>
