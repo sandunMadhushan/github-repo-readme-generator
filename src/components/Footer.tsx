@@ -1,5 +1,12 @@
 import { Github, Twitter, Heart } from "lucide-react";
 
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 export function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200 mt-20">
@@ -7,12 +14,15 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1">
-            <div className="flex items-center space-x-3 mb-4">
+            <button 
+              onClick={() => scrollToSection('home')}
+              className="flex items-center space-x-3 mb-4 cursor-pointer"
+            >
               <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold">R</span>
               </div>
               <span className="font-bold text-gray-900">README Pro</span>
-            </div>
+            </button>
             <p className="text-gray-600 text-sm leading-relaxed">
               Create professional README files with advanced features and
               beautiful templates.
@@ -24,32 +34,34 @@ export function Footer() {
             <h4 className="font-semibold text-gray-900 mb-4">Product</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                <button
+                  onClick={() => scrollToSection('features')}
+                  className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   Features
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                <button
+                  onClick={() => scrollToSection('templates')}
+                  className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   Templates
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                <button
+                  onClick={() => scrollToSection('examples')}
+                  className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   Examples
-                </a>
+                </button>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://github.com/sandunMadhushan/github-repo-readme-generator#api"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors"
                 >
                   API
@@ -64,7 +76,9 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <a
-                  href="#"
+                  href="https://github.com/sandunMadhushan/github-repo-readme-generator/blob/main/README.md"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors"
                 >
                   Documentation
@@ -72,7 +86,9 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://github.com/sandunMadhushan/github-repo-readme-generator/wiki"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors"
                 >
                   Guides
@@ -80,15 +96,19 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://github.com/sandunMadhushan/github-repo-readme-generator/blob/main/CHANGELOG.md"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors"
                 >
-                  Blog
+                  Changelog
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://github.com/sandunMadhushan/github-repo-readme-generator/issues"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors"
                 >
                   Support
@@ -102,20 +122,32 @@ export function Footer() {
             <h4 className="font-semibold text-gray-900 mb-4">Connect</h4>
             <div className="flex items-center space-x-4">
               <a
-                href="#"
+                href="https://github.com/sandunMadhushan/github-repo-readme-generator"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
-                aria-label="GitHub"
-                title="GitHub"
+                aria-label="GitHub Repository"
+                title="GitHub Repository"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://github.com/sandunMadhushan"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
-                aria-label="Twitter"
-                title="Twitter"
+                aria-label="GitHub Profile"
+                title="GitHub Profile"
               >
                 <Twitter className="w-5 h-5" />
+              </a>
+            </div>
+            <div className="mt-4">
+              <a
+                href="mailto:contact@example.com"
+                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                Get in touch
               </a>
             </div>
           </div>
