@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Header } from "./components/Header";
-import { RepoInput } from "./components/RepoInput";
-import { TemplateSelector } from "./components/TemplateSelector";
-import { EditorSection } from "./components/EditorSection";
-import { PreviewSection } from "./components/PreviewSection";
-import { ExportOptions } from "./components/ExportOptions";
-import { FeatureCard } from "./components/FeatureCard";
-import { Footer } from "./components/Footer";
+import {
+  RepoInput,
+  TemplateSelector,
+  EditorSection,
+  PreviewSection,
+  ExportOptions,
+  FeatureCard,
+  Footer,
+} from "./components";
 import type { RepoData, Template } from "./types";
 
 function App() {
