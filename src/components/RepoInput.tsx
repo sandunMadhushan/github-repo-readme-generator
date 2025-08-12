@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Github, Search, Loader2, AlertCircle } from 'lucide-react'
-import { RepoData, GitHubRepo, GitHubContent } from '../types'
+import type { RepoData, GitHubRepo, GitHubContent } from '../types'
 
 interface RepoInputProps {
   onRepoAnalyzed: (data: RepoData) => void
@@ -13,7 +13,7 @@ export function RepoInput({ onRepoAnalyzed, isLoading, setIsLoading }: RepoInput
   const [error, setError] = useState('')
 
   const extractRepoInfo = (url: string) => {
-    const match = url.match(/github\.com\/([^\/]+)\/([^\/]+)/)
+    const match = url.match(/github\.com\/([^/]+)\/([^/]+)/)
     if (!match) return null
     return { owner: match[1], repo: match[2].replace('.git', '') }
   }
