@@ -3,7 +3,7 @@ import { Github, Twitter, Heart } from "lucide-react";
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+    element.scrollIntoView({ behavior: "smooth" });
   }
 };
 
@@ -14,8 +14,8 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1">
-            <button 
-              onClick={() => scrollToSection('home')}
+            <button
+              onClick={() => scrollToSection("home")}
               className="flex items-center space-x-3 mb-4 cursor-pointer"
             >
               <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
@@ -35,7 +35,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <button
-                  onClick={() => scrollToSection('features')}
+                  onClick={() => scrollToSection("features")}
                   className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   Features
@@ -43,7 +43,7 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection('templates')}
+                  onClick={() => scrollToSection("templates")}
                   className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   Templates
@@ -51,7 +51,7 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection('examples')}
+                  onClick={() => scrollToSection("examples")}
                   className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                 >
                   Examples
@@ -76,7 +76,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <a
-                  href="https://github.com/sandunMadhushan/github-repo-readme-generator/blob/main/README.md"
+                  href="https://github.com/sandunMadhushan/github-repo-readme-generator/blob/master/README.md"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -96,7 +96,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/sandunMadhushan/github-repo-readme-generator/blob/main/CHANGELOG.md"
+                  href="https://github.com/sandunMadhushan/github-repo-readme-generator/blob/master/CHANGELOG.md"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 transition-colors"
