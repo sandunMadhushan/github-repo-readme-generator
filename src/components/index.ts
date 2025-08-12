@@ -6,3 +6,4 @@ export { PreviewSection } from "./PreviewSection";
 export { ExportOptions } from "./ExportOptions";
 export { FeatureCard } from "./FeatureCard";
 export { Footer } from "./Footer";
+export { BackToTop } from "./BackToTop";
