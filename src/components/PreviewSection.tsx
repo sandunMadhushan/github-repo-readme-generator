@@ -20,19 +20,24 @@ export function PreviewSection({ content }: PreviewSectionProps) {
           <div className="prose prose-sm max-w-none">
             <ReactMarkdown
               components={{
-                code({ inline, className, children, ...props }) {
+                code: (props) => {
+                  const { children, className } = props
                   const match = /language-(\w+)/.exec(className || '')
-                  return !inline && match ? (
-                    <SyntaxHighlighter
-                      style={oneDark}
-                      language={match[1]}
-                      PreTag="div"
-                      {...props}
-                    >
-                      {String(children).replace(/\n$/, '')}
-                    </SyntaxHighlighter>
-                  ) : (
-                    <code className={className} {...props}>
+                  
+                  if (match) {
+                    return (
+                      <SyntaxHighlighter
+                        style={oneDark}
+                        language={match[1]}
+                        PreTag="div"
+                      >
+                        {String(children).replace(/\n$/, '')}
+                      </SyntaxHighlighter>
+                    )
+                  }
+                  
+                  return (
+                    <code className={className}>
                       {children}
                     </code>
                   )
@@ -68,7 +73,7 @@ export function PreviewSection({ content }: PreviewSectionProps) {
                   </ol>
                 ),
                 li: ({ children }) => (
-                  <li className="text-gray-600">
+                  <li className="text-gray-600 ml-6">
                     {children}
                   </li>
                 ),

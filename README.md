@@ -1,69 +1,152 @@
-# React + TypeScript + Vite
+# 📝 README Generator Pro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-18-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Vite](https://img.shields.io/badge/Vite-5-purple) ![Tailwind](https://img.shields.io/badge/TailwindCSS-3-cyan)
 
-Currently, two official plugins are available:
+An advanced README generator that creates comprehensive, professional documentation for your GitHub repositories. Built with modern web technologies and powered by intelligent repository analysis.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+### 🔍 **Smart Repository Analysis**
+- Automatically analyzes repository structure and dependencies
+- Detects programming languages, frameworks, and tools
+- Identifies project patterns and generates relevant content
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📋 **Multiple Professional Templates**
+- **Minimal** - Clean and simple for small projects
+- **Standard** - Well-structured for personal projects
+- **Comprehensive** - Detailed documentation for serious projects
+- **Project-Specific** - Customized based on detected technologies
+- **Open Source** - Optimized with contribution guidelines
+- **Enterprise** - Professional with compliance sections
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 👁️ **Live Preview & Editing**
+- Real-time markdown preview with syntax highlighting
+- WYSIWYG editing experience
+- Responsive preview for different screen sizes
+- GitHub-flavored markdown support
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 📥 **Advanced Export Options**
+- Download as Markdown (.md)
+- Export as HTML with styling
+- Copy to clipboard functionality
+- Multiple format support
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🎨 **Modern UI/UX**
+- Beautiful, responsive design built with Tailwind CSS
+- Dark/light theme support
+- Smooth animations and transitions
+- Accessibility-first approach
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS + Custom Design System
+- **UI Components**: Headless UI + Custom Components
+- **Icons**: Lucide React
+- **Markdown**: React Markdown + Syntax Highlighter
+- **API Integration**: GitHub REST API
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v20.19.0 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/sandunMadhushan/github-repo-readme-generator
+   cd github-repo-readme-generator
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to `http://localhost:5173`
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript compiler check
+
+## 📖 Usage
+
+### Basic Usage
+
+1. **Enter Repository URL**: Paste your GitHub repository URL
+2. **Analyze Repository**: Click analyze to extract repository data
+3. **Choose Template**: Select from available professional templates
+4. **Customize Content**: Edit the generated README in the editor
+5. **Preview Live**: See real-time preview with syntax highlighting
+6. **Export**: Download as Markdown, HTML, or copy to clipboard
+
+### Advanced Features
+
+#### Repository Analysis
+The tool automatically detects:
+- Programming languages and their usage percentages
+- Dependencies and development tools
+- Project structure and file organization
+- Framework patterns (React, Vue, Angular, etc.)
+- Testing setup and CI/CD configuration
+
+#### Template Customization
+Each template includes:
+- Smart content generation based on repository analysis
+- Customizable sections (features, installation, usage, etc.)
+- Automatic badge generation
+- Technology-specific documentation patterns
+
+## 🤝 Contributing
+
+We welcome contributions from the community!
+
+### Development Setup
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Run tests and linting (`npm run lint`)
+5. Commit your changes (`git commit -m 'Add amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
+
+### Code Style
+
+- Follow TypeScript best practices
+- Use Tailwind CSS for styling
+- Write accessible HTML
+- Add proper type annotations
+- Include JSDoc comments for complex functions
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgments
+
+- [GitHub API](https://docs.github.com/en/rest) for repository data
+- [React Markdown](https://github.com/remarkjs/react-markdown) for markdown rendering
+- [Tailwind CSS](https://tailwindcss.com/) for the design system
+- [Lucide](https://lucide.dev/) for beautiful icons
+- [Vite](https://vitejs.dev/) for the amazing build tool
+
+---
+
+⭐ **Star this project** if you find it helpful!
+
+**Built with ❤️ for the developer community**

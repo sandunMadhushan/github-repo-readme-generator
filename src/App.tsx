@@ -7,7 +7,7 @@ import { PreviewSection } from './components/PreviewSection'
 import { ExportOptions } from './components/ExportOptions'
 import { FeatureCard } from './components/FeatureCard'
 import { Footer } from './components/Footer'
-import { RepoData, Template } from './types'
+import type { RepoData, Template } from './types'
 
 function App() {
   const [repoData, setRepoData] = useState<RepoData | null>(null)
