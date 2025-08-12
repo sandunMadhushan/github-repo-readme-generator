@@ -15,11 +15,13 @@ The project is configured with automatic deployment via GitHub Actions:
 ### Setup Steps:
 
 1. **Enable GitHub Pages:**
+
    - Go to your repository settings
    - Navigate to "Pages" section
    - Set Source to "GitHub Actions"
 
 2. **Push to main/master branch:**
+
    ```bash
    git add .
    git commit -m "Configure GitHub Pages deployment"
@@ -36,6 +38,7 @@ The project is configured with automatic deployment via GitHub Actions:
 For custom domain (like `https://sandun.is-a.dev/github-repo-readme-generator/`):
 
 1. **DNS Configuration:**
+
    - Add CNAME record pointing to `yourusername.github.io`
    - Or add A records pointing to GitHub Pages IPs
 
@@ -49,6 +52,7 @@ For custom domain (like `https://sandun.is-a.dev/github-repo-readme-generator/`)
 If you prefer manual deployment:
 
 1. **Build the project:**
+
    ```bash
    npm run build
    ```
@@ -62,19 +66,22 @@ If you prefer manual deployment:
 ### Common Issues:
 
 #### Empty/Blank Page
+
 - **Cause:** Incorrect base path configuration
 - **Solution:** Ensure `vite.config.ts` has correct base path:
   ```typescript
   export default defineConfig({
-    base: '/your-repository-name/',
-  })
+    base: "/your-repository-name/",
+  });
   ```
 
 #### 404 Errors for Assets
+
 - **Cause:** Assets not loading due to incorrect paths
 - **Solution:** Check that `index.html` uses relative paths (`./` instead of `/`)
 
 #### Build Failures
+
 - **Cause:** TypeScript errors or missing dependencies
 - **Solution:** Run `npm run lint` and fix any issues
 
