@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Edit3, RefreshCw } from 'lucide-react'
 import type { Template, RepoData } from '../types'
 
@@ -12,7 +12,7 @@ interface EditorSectionProps {
 export function EditorSection({ content, onChange, template, repoData }: EditorSectionProps) {
   const [isGenerating, setIsGenerating] = useState(false)
 
-  const generateContent = () => {
+  const generateContent = useCallback(() => {
     setIsGenerating(true)
     
     // Simulate content generation based on template and repo data
@@ -21,13 +21,13 @@ export function EditorSection({ content, onChange, template, repoData }: EditorS
       onChange(generatedContent)
       setIsGenerating(false)
     }, 1500)
-  }
+  }, [template, repoData, onChange])
 
   useEffect(() => {
     if (!content && repoData) {
       generateContent()
     }
-  }, [template, repoData])
+  }, [content, repoData, generateContent])
 
   const createReadmeContent = (template: Template, repoData: RepoData): string => {
     const shields = generateShields(repoData)
