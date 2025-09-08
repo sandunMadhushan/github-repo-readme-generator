@@ -6,7 +6,7 @@ An advanced README generator that creates comprehensive, professional documentat
 
 ## 🌐 Live Demo
 
-**🔗 [Try it now!](https://sandun.is-a.dev/github-repo-readme-generator/)**
+**🔗 [Try it now!](https://sandunmadhushan.github.io/github-repo-readme-generator/)**
 
 Experience the full power of README Generator Pro with our live demo. No installation required!
 
